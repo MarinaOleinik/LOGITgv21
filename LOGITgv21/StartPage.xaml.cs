@@ -21,15 +21,28 @@ namespace LOGITgv21
                 TextColor = Color.Tomato,
                 BackgroundColor = Color.Violet
             };
+            Button Timer_btn = new Button
+            {
+                Text = "Ava Timer leht",
+                TextColor = Color.Tomato,
+                BackgroundColor = Color.Violet
+            };
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
-                Children = { Entry_btn },
+                Children = { Entry_btn, Timer_btn },
                 BackgroundColor = Color.Yellow
             };
             Content=st;
             Entry_btn.Clicked += Entry_btn_Clicked;
+            Timer_btn.Clicked += Timer_btn_Clicked;
         }
+
+        private async void Timer_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Timer_Page());
+        }
+
         private async void Entry_btn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Entry_Page());
