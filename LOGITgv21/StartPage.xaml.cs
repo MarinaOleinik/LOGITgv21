@@ -15,10 +15,10 @@ namespace LOGITgv21
         public StartPage()
         {
             //InitializeComponent();
-            string w=DeviceDisplay.MainDisplayInfo.Width.ToString();
+            
             Button Entry_btn = new Button
             {
-                Text = w,
+                Text = "Ava Entry leht",
                 TextColor = Color.Tomato,
                 BackgroundColor = Color.Violet
             };

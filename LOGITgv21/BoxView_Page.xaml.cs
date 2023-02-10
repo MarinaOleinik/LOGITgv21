@@ -39,11 +39,11 @@ namespace LOGITgv21
         private void Tap_Tapped(object sender, EventArgs e)
         {
             rnd= new Random();
-            
+            //int w = (int)DeviceDisplay.MainDisplayInfo.Width;
             box.Color = Color.FromRgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
             box.WidthRequest=box.Width+50;
             box.HeightRequest= box.HeightRequest+50;
-            if (box.WidthRequest > 200)
+            if (box.WidthRequest > (int)DeviceDisplay.MainDisplayInfo.Width / 5)
             {
                 box.HeightRequest = 100;
                 box.WidthRequest = 200;
