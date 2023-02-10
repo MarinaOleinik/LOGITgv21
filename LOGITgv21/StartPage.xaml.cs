@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,9 +15,10 @@ namespace LOGITgv21
         public StartPage()
         {
             //InitializeComponent();
+            string w=DeviceDisplay.MainDisplayInfo.Width.ToString();
             Button Entry_btn = new Button
             {
-                Text = "Ava Entry leht",
+                Text = w,
                 TextColor = Color.Tomato,
                 BackgroundColor = Color.Violet
             };
