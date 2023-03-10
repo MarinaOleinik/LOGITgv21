@@ -12,52 +12,34 @@ namespace LOGITgv21
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage
     {
+        List<ContentPage> pages = new List<ContentPage>() { new Entry_Page(), new Timer_Page(), new BoxView_Page() }; // index= 0,1,2,...
+        List<string> tekstid = new List<string> { "Ava entry leht", "Ava timer leht", "Ava box leht" };
         public StartPage()
         {
-            //InitializeComponent();
-            
-            Button Entry_btn = new Button
-            {
-                Text = "Ava Entry leht",
-                TextColor = Color.Tomato,
-                BackgroundColor = Color.Violet
-            };
-            Button Timer_btn = new Button
-            {
-                Text = "Ava Timer leht",
-                TextColor = Color.Tomato,
-                BackgroundColor = Color.Violet
-            };
-            Button Box_btn = new Button
-            {
-                Text = "Ava BoxView leht",
-                TextColor = Color.Tomato,
-                BackgroundColor = Color.Violet
-            };
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
-                Children = { Entry_btn, Timer_btn,Box_btn },
                 BackgroundColor = Color.Yellow
             };
-            Content=st;
-            Entry_btn.Clicked += Entry_btn_Clicked;
-            Timer_btn.Clicked += Timer_btn_Clicked;
-            Box_btn.Clicked += Box_btn_Clicked;
-        }
-        private async void Box_btn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new BoxView_Page());
-        }
 
-        private async void Timer_btn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Timer_Page());
+            for (int i = 0; i < pages.Count; i++)
+            {
+                Button button = new Button
+                {
+                    Text= tekstid[i],
+                    TabIndex= i,
+                    BackgroundColor=Color.Violet,
+                    TextColor= Color.White
+                };
+                st.Children.Add(button);
+                button.Clicked += Navig_funktsion;
+            }
+            Content=st;            
         }
-
-        private async void Entry_btn_Clicked(object sender, EventArgs e)
+        private async void Navig_funktsion(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Entry_Page());
-        }
+            Button btn = sender as Button; //(Button)sender
+            await Navigation.PushAsync(pages[btn.TabIndex]);
+        }       
     }
 }
