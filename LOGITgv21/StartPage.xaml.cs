@@ -12,8 +12,8 @@ namespace LOGITgv21
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage
     {
-        List<ContentPage> pages = new List<ContentPage>() { new Entry_Page(), new Timer_Page(), new BoxView_Page() }; // index= 0,1,2,...
-        List<string> tekstid = new List<string> { "Ava entry leht", "Ava timer leht", "Ava box leht" };
+        List<ContentPage> pages = new List<ContentPage>() { new Entry_Page(), new Timer_Page(), new BoxView_Page(), new Frame_Grig_Page()}; // index= 0,1,2,...
+        List<string> tekstid = new List<string> { "Ava entry leht", "Ava timer leht", "Ava box leht", "Ava frame leht" };
         public StartPage()
         {
             StackLayout st = new StackLayout
