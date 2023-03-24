@@ -30,7 +30,7 @@ namespace LOGITgv21
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            List<int> laiused = new List<int> { (int)DeviceDisplay.MainDisplayInfo.Height/10, (int)(DeviceDisplay.MainDisplayInfo.Height)/20, (int)DeviceDisplay.MainDisplayInfo.Height/20 };
+            List<int> laiused = new List<int> { 2,1,1};// { (int)DeviceDisplay.MainDisplayInfo.Height/20, (int)(DeviceDisplay.MainDisplayInfo.Height)/40, (int)DeviceDisplay.MainDisplayInfo.Height/20 };
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -38,7 +38,7 @@ namespace LOGITgv21
                     r = rnd.Next(0, 255);
                     g = rnd.Next(0, 255);
                     b = rnd.Next(0, 255);
-                    gr.RowDefinitions.Add(new RowDefinition { Height = new GridLength(laiused[i]) });
+                    gr.RowDefinitions.Add(new RowDefinition { Height = new GridLength(laiused[i], GridUnitType.Star) });
                     gr.Children.Add(
                         new BoxView 
                         { 
@@ -46,13 +46,10 @@ namespace LOGITgv21
                         VerticalOptions = LayoutOptions.FillAndExpand,
                         HorizontalOptions = LayoutOptions.FillAndExpand
                         }, j, i);
-
                 }
                 gr.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             }
-            
 
-            
             fr = new Frame
             {
                 Content = gr,
