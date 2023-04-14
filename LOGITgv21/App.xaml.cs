@@ -10,7 +10,7 @@ namespace LOGITgv21
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new PopUp_Page());
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()

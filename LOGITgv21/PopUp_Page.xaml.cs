@@ -51,7 +51,7 @@ namespace LOGITgv21
             string result2 = await DisplayPromptAsync("Vasta", "Millega võrdub 5 + 5?", initialValue: "10", maxLength: 2, keyboard: Keyboard.Numeric);
         }
 
-        //Valik järjandist
+        //Valik järjendist
         private async  void AlertListButton_Clicked(object sender, EventArgs e)
         {
             var action = await DisplayActionSheet("Mida teha?", "Loobu", "Kustutada", "Tantsida", "Laulda", "Joonestada");
@@ -62,7 +62,7 @@ namespace LOGITgv21
         private async  void AlertYesNoButton_Clicked(object sender, EventArgs e)
         {
             bool result = await DisplayAlert("Kinnitus", "Kas oled kindel?", "Olen kindel", "Ei ole kindel");
-            await DisplayAlert("Teade", "Teie valik on: " + (result ? "E" : "Ei"), "OK");
+            await DisplayAlert("Teade", "Teie valik on: " + (result ? "Jah" : "Ei"), "OK");
         }
         //Lihne teade
         private void AlertButton_Clicked(object sender, EventArgs e)
